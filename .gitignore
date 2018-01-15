@@ -1,0 +1,7 @@
+*
+!.gitignore
+!*.fig
+!*.mat
+!*.m
+!*.slx
+!*.WRL
