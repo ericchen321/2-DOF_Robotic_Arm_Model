@@ -44,8 +44,8 @@ PID0z = [SysOLXF0p(3) SysOLXF0p(4)];            % Defines which two open-loop po
 PID0p = [0];                                    % PID adds a zero to the open loop xfer fctn
 PIDXF0 = zpk(PID0z, PID0p, UnityGain);          % PID0's transfer function with Kd undetermined
 OLXF0 = minreal((PIDXF0 * SysOLXF0), 1e-3);
-figure;
-rlocus(OLXF0);
+%figure;
+%rlocus(OLXF0);
 title('RLocus Q0');
 
 % For Q1: Root Locus
@@ -53,8 +53,8 @@ PID1z = [SysOLXF1p(1) SysOLXF1p(4)]; % Defines which two open-loop poles to canc
 PID1p = [0]; % PID adds a zero to the open loop xfer fctn
 PIDXF1 = zpk(PID1z, PID1p, UnityGain);  %PID0's transfer function with Kd undetermined
 OLXF1 = minreal(PIDXF1 * SysOLXF1, 1e-3);
-figure;
-rlocus(OLXF1);
+%figure;
+%rlocus(OLXF1);
 title('RLocus Q1');
 
 % PID gain values for Q0 and Q1
