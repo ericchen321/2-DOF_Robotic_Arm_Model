@@ -23,7 +23,7 @@ Sml = 1e-6;             % General purpose small number
 %%%%%%%%%%%%%%%%%%
 
 % Simulation Execution Time
-TotalTime = 20;          % (s)
+TotalTime = 3;          % (s)
 
 % Amplifier
 R1  = 2.2;               % (Mohm)

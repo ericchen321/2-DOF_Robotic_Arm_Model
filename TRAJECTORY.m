@@ -9,9 +9,9 @@
 % face
 radius = 60;
 
-lengTh = radius * ones(1,36);
+lengTh = radius * ones(1,37);
 
-angleInDeg = 0:10:350;
+angleInDeg = 0:10:360;
 
 angleInRad = angleInDeg * pi/180;
 
@@ -51,6 +51,9 @@ Yd_smile = lengTh.*sin(angleInRad);
 
 Xd = [Xd_leftI, Xd_rightI, Xd_smile, Xd_face];
 Yd = [Yd_leftI, Yd_rightI, Yd_smile, Yd_face];
+
+Xd = repmat(Xd,1,60);
+Yd = repmat(Yd,1,60);
 Zd = ones(1,length(Xd));
 
 plot(Xd, Yd);
