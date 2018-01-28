@@ -174,7 +174,7 @@ B0 = 2*TConst0*INoLoad0/WNoLoad0;      % Compute B from the no load parameters.
 % Determining K (Spring Constant):
 % The spring constant doesn't originate from the motor Q0 itself,
 % instead it's due to the spring connected to the bearings
-K = SpringConst;                 % Value taken from the Datasheet
+K = 0;                 % Value taken from the Datasheet
 
 % Mech Transfer Function:
 % The transfer function in the standard form s/(Js^2 + Bs + K)

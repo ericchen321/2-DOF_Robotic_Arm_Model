@@ -46,7 +46,7 @@ PIDXF0 = zpk(PID0z, PID0p, UnityGain);          % PID0's transfer function with 
 OLXF0 = minreal((PIDXF0 * SysOLXF0), 1e-3);
 %figure;
 %rlocus(OLXF0);
-title('RLocus Q0');
+%title('RLocus Q0');
 
 % For Q1: Root Locus
 PID1z = [SysOLXF1p(1) SysOLXF1p(4)]; % Defines which two open-loop poles to cancel
@@ -55,7 +55,7 @@ PIDXF1 = zpk(PID1z, PID1p, UnityGain);  %PID0's transfer function with Kd undete
 OLXF1 = minreal(PIDXF1 * SysOLXF1, 1e-3);
 %figure;
 %rlocus(OLXF1);
-title('RLocus Q1');
+%title('RLocus Q1');
 
 % PID gain values for Q0 and Q1
 [PID0n, PID0d] = tfdata(PIDXF0, 'v');   % extract num and den coefficicents
