@@ -3,10 +3,6 @@
 %%%%%%%%%%%%%%%%%%%%%%
 % Desired Trajectory %
 %%%%%%%%%%%%%%%%%%%%%%
-% xy coordinates of circle moving left to right
-
-% Robot XY Trajectory for cross-hatch pattern
-% face
 radius = 60;
 
 lengTh = radius * ones(1,37);
