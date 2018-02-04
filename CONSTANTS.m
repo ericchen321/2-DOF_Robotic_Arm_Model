@@ -23,7 +23,7 @@ Sml = 1e-6;             % General purpose small number
 %%%%%%%%%%%%%%%%%%
 
 % Simulation Execution Time
-TotalTime = 3;          % (s)
+TotalTime = 1;          % (s)
 
 % Sensor
 

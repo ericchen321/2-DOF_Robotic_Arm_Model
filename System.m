@@ -111,8 +111,8 @@ BackEMF1 = Q1(13);
 
 
 % Mech Transfer Function:
-J1 = 0;
-B1 = 0;
+J1 = 1;
+B1 = 1;
 Mech1n  = [1];                         % Numerator
 Mech1d  = [J1 B1];                     % Denominator
 
