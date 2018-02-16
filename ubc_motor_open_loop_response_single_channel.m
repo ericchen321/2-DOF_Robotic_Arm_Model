@@ -1,7 +1,7 @@
 clear all;
 
 % read values
-fileID0 = fopen('motor_step_response_data/ubc_motor_step_response_v17_@12V.txt','r');
+fileID0 = fopen('motor_open_loop_response_data/ubc_motor_open_loop_response_v1_@255.txt','r');
 formatSpec = '%d,%d';
 sizeA = [2 inf];
 A = fscanf(fileID0,formatSpec,sizeA);
@@ -30,12 +30,12 @@ estXFData = iddata(speedVecForEst,voltVecForEst,Ts);
 estXF = tfest(estXFData,2,0);
 
 % get xf using measured B, J and stuff
-R=2.768;
-L=0.0012;
-J=7.8*10^(-6);
-Kt=0.0135;
-Ke=0.0135;
-B=3.58*10^(-7);
+R=2.74;
+L=0.0019;
+J=5.5*10^(-5);
+Kt=0.013;
+Ke=0.013;
+B=3.2*10^(-7);
 s = tf('s');
 modelXF = (Kt/(L*J))/(s^2 + (B/J+R/L)*s + (R*B+Kt*Ke)/(L*J));
 
