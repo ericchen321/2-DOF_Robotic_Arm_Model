@@ -55,7 +55,10 @@ StallI1 = Q1(8);                 % Max peak current
 
 
 
-
+% ==========================
+% Driver Parameters
+% ==========================
+VDriverSat = 12;
 
 
 
@@ -97,7 +100,7 @@ StFric0 = 0;       % Total static frictional torque
 
 
 % =============================
-% Q1 : Rotation about x-axis
+% Q1 : Rotation of the bottom motor
 % =============================
 % Electrical Motor Dynamics
 Elec1n  = [1];                      % Numerator
