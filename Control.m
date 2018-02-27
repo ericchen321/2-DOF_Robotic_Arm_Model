@@ -21,11 +21,6 @@ ElecMechXF1 = ElecXF1 * TConst1 * MechXF1;
 MotorXF0 = (ElecMechXF0/(1 + ElecMechXF0 * BackEMF0))*(1/s);
 MotorXF1 = (ElecMechXF1/(1 + ElecMechXF1 * BackEMF1))*(1/s);
 
-% ================
-% CONTROLLER GAINS
-% ================
-
-
 % System (Open-loop) Transfer Functions
 SysOLXF0 = minreal(MotorXF0, 1e-3);             % Open loop gain of the system
                                                 % (PID) not included is
@@ -38,9 +33,23 @@ SysOLXF1 = minreal(MotorXF1, 1e-3);
 
 % For Q1: Root Locus
 
-% PID gain values for Q0 and Q1
 
+
+
+
+% ================
+% CONTROLLER GAINS
+% ================
+% PID sample time
+PIDSampleTime = 800*10^(-6);
+
+% PWM Saturation
+PWMUpperSat = 255;
+PWMLowerSat = -255;
+
+
+% PID gain values for Q0 and Q1
 % Enter optimized PID values here.
 % No more than 3 significant figures per gain value.
 PID0 = [0.178 8.83 0.0785];
-PID1 = [0.123 0 0.00250];
+PID1 = [0.8 0.005 0.005];

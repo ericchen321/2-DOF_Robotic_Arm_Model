@@ -45,5 +45,5 @@ step(PWM * estXF);
 hold on;
 plot(timeVec, speedVec);
 aveVolt = -17.27 * exp(-0.0257 * PWM) + 10.3;
-step(aveVolt * (694.0/734.0) * modelXF);
+step(aveVolt * modelXF);
 hold off;

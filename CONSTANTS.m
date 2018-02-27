@@ -22,10 +22,13 @@ Sml = 1e-6;             % General purpose small number
 % Specifications %
 %%%%%%%%%%%%%%%%%%
 
-% Simulation Execution Time
-TotalTime = 1;          % (s)
+% Number of frames per second
+FramePerSec = 10;
 
 % Sensor
+
+% Distance between tip of laser to the drawing pad
+Height = 0.1;
 
 % Coeff of static friction
 % Amount of torque required to set a body in motion which has a given

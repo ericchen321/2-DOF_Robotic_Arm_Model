@@ -76,19 +76,18 @@ BackEMF0 = Q0(13);                  % The speed costant
                                     
 
 % Mechanical Motor Dynamics
-
-
-% Mech Transfer Function:
-J0 = 1;
-B0 = 1;
-Mech0n  = [1 0];                 % Numerator
+J0 = 7.8 * 10^(-6);
+B0 = 3.58 * 10^(-7);
+Mech0n  = [1];                 % Numerator
 Mech0d  = [J0 B0];               % Denominator
 JntSat0 =  Big;                  % Q0 has unlimited motion range, as stated in the Datasheet
 
 % Sensor Dynamics
+Encoder0Res = 0.9 * (pi/180);
+Q0Initial = 0;
 
 % Static Friction
-StFric0 = 0;       % Total static frictional torque
+StFric0 = 0.0024;       % Total static frictional torque
 
 
 
@@ -111,15 +110,14 @@ TConst1  = Q1(12);
 BackEMF1 = Q1(13);
 
 % Mechanical Motor Dynamics
-
-
-% Mech Transfer Function:
-J1 = 1;
-B1 = 1;
+J1 = 7.8 * 10^(-6);
+B1 = 3.58 * 10^(-7);
 Mech1n  = [1];                         % Numerator
 Mech1d  = [J1 B1];                     % Denominator
 
 % Sensor Dynamics
+Encoder1Res = 0.9 * (pi/180);
+Q1Initial = 0;
 
 % Static Friction
-StFric1 = 0;                % static friction on q1 is negligible, since only the laser is loaded on q1's rotor
+StFric1 = 0.0024;
