@@ -58,6 +58,7 @@ StallI1 = Q1(8);                 % Max peak current
 % ==========================
 % Driver Parameters
 % ==========================
+DriverGain = 12.0/255;
 VDriverSat = 12;
 
 
