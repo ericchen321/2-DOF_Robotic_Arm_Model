@@ -1,7 +1,7 @@
 clear all;
 
 % read values
-fileID0 = fopen('motor_step_response_data/ubc_motor_step_response_v17_@12V.txt','r');
+fileID0 = fopen('motor_step_response_data/ubc_motor_step_response_v20_@12V.txt','r');
 formatSpec = '%d,%d';
 sizeA = [2 inf];
 A = fscanf(fileID0,formatSpec,sizeA);
