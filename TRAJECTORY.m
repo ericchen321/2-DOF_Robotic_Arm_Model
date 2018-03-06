@@ -4,7 +4,7 @@
 SampleTime = 0.08;     % ADJUSTABLE
 
 % Simulation Execution Time
-TotalTime = 1;          % (s) ADJUSTABLE
+TotalTime = 5;          % (s) ADJUSTABLE
 
 
 % =====================
