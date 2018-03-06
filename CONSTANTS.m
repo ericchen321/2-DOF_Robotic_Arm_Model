@@ -23,7 +23,7 @@ Sml = 1e-6;             % General purpose small number
 %%%%%%%%%%%%%%%%%%
 
 % Number of frames per second
-FramePerSec = 10;
+FramePerSec = 1;
 
 % Sensor
 
