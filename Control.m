@@ -58,7 +58,7 @@ CLXF1 = (Kd1 * PIDXF1 * MotorXF1)/(1 + Kd1 * PIDXF1 * MotorXF1);
 % ================
 
 % PID sample time specified in seconds
-PIDSampleTime = 0.008;
+PIDSampleTime = 0.001;
 
 
 % PWM Saturation
@@ -74,7 +74,7 @@ PID0 = [0.178 8.83 0.0785];
 PID1 = [Kp1 Ki1 Kd1];
 
 % Digital PID values
-Kd1Dig = 1.36;
+Kd1Dig = 4;
 Kp1Dig = 8.518*Kd1Dig;
 Ki1Dig = 0;
 PIDDig1 = [Kp1Dig Ki1Dig Kd1Dig];

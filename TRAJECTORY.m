@@ -17,7 +17,7 @@ Time       = 0:SampleTime:TotalTime;
 % Desired Trajectory %
 %%%%%%%%%%%%%%%%%%%%%%
 
-Radius = 0.1; % ADJUSTABLE
+Radius = 0.06; % ADJUSTABLE
 
 Period = 1/FramePerSec;
 
