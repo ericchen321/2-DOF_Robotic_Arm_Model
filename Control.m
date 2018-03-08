@@ -41,9 +41,9 @@ PID1z = [SysOLXF1p(1) SysOLXF1p(3)]; % Defines which two open-loop poles to canc
 PID1p = [0]; % PID adds a zero to the open loop xfer fctn
 PIDXF1 = zpk(PID1z, PID1p, UnityGain);  %PID0's transfer function with Kd undetermined
 OLXF1 = minreal(PIDXF1 * SysOLXF1, 1e-3);
-figure;
-rlocus(OLXF1);
-title('RLocus Q1');
+%figure;
+%rlocus(OLXF1);
+%title('RLocus Q1');
 
 
 % Closed loop transfer functions
@@ -52,16 +52,14 @@ Kp1 = 8.518*Kd1;
 Ki1 = 0;
 CLXF1 = (Kd1 * PIDXF1 * MotorXF1)/(1 + Kd1 * PIDXF1 * MotorXF1);
 
-Kd1Dig = 0.11;
-Kp1Dig = 8.518*Kd1Dig;
-Ki1Dig = 0;
-
 
 % ================
 % CONTROLLER GAINS
 % ================
+
 % PID sample time specified in seconds
 PIDSampleTime = 0.008;
+
 
 % PWM Saturation
 PWMUpperSat = 1023;
@@ -70,8 +68,13 @@ PWMLowerSat = -1023;
 
 % PID gain values for Q0 and Q1
 % Enter optimized PID values here.
-% No more than 3 significant figures per gain value.
+
+% Analog PID values
 PID0 = [0.178 8.83 0.0785];
 PID1 = [Kp1 Ki1 Kd1];
 
+% Digital PID values
+Kd1Dig = 1.36;
+Kp1Dig = 8.518*Kd1Dig;
+Ki1Dig = 0;
 PIDDig1 = [Kp1Dig Ki1Dig Kd1Dig];

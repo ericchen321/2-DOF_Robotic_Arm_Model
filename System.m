@@ -90,7 +90,8 @@ Q0Initial = 0;
 % Static Friction
 StFric0 = 0.0024;       % Total static frictional torque
 
-
+% Serial
+SerialSampleTime = 0.04;
 
 
 
