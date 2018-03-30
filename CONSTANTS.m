@@ -13,6 +13,7 @@ FtPerM = 3.28;          % ft / m
 RadPerDeg = pi/180;     % rad / deg
 DegPerRad = 180/pi;     % deg / rad
 RadPSecPerRPM = pi/30;  % (rad/s) / rpm
+RPMPerRadPSec = 9.5492; % rpm / (rad/s)
 
 Big = 1e6;              % General purpose large number
 Sml = 1e-6;             % General purpose small number
