@@ -45,3 +45,27 @@ title('Desired Pitch');
 figure;
 plot(time,desiredYawArray);
 title('Desired Yaw');
+
+% write the yaw angles to file
+fileID1 = fopen('kin_yaw_triangle_fast.txt', 'w');
+i = 1;
+for i = 1:size(desiredYawArray,2)
+  if i ~= size(desiredYawArray,2)
+    fprintf(fileID1,'%.2f, ',desiredYawArray(i));
+  else
+    fprintf(fileID1,'%.2f',desiredYawArray(i));
+  end
+end
+fclose(fileID1);
+
+% write the pitch angles to file
+fileID2 = fopen('kin_pitch_triangle_fast.txt', 'w');
+i = 1;
+for i = 1:size(desiredPitchArray,2)
+  if i ~= size(desiredPitchArray,2)
+    fprintf(fileID2,'%.2f, ',desiredPitchArray(i));
+  else
+    fprintf(fileID2,'%.2f',desiredPitchArray(i));
+  end
+end
+fclose(fileID2);
