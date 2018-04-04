@@ -1,6 +1,8 @@
 clear all;
 
 % Enter parameters
+GearGain0 = 5;
+GearGain1 = 3;
 DegPerRad = 57.3;
 Radius = 0.06;
 FramePerSec = 2;
@@ -31,13 +33,20 @@ for i = 1:SetPointSize
     desiredYawArray(i) = DegPerRad * double(sol);
 end
 
+% Scale desired yaw and pitch by gear gains
+desiredYawArray = GearGain0 * desiredYawArray;
+desiredPitchArray = GearGain1 * desiredPitchArray;
+
+% Shift the desired yaw angles
+desiredYawArray = desiredYawArray - desiredYawArray(1);
+
 % plot desired pitch and yaw
 figure;
 plot(time,desiredPitchArray);
-title('Desired Pitch');
+title('Circle Slow: Desired Pitch');
 figure;
 plot(time,desiredYawArray);
-title('Desired Yaw');
+title('Circle Slow: Desired Yaw');
 
 % write the yaw angles to file
 fileID1 = fopen('kin_yaw_circle_slow.txt', 'w');

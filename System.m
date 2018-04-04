@@ -6,9 +6,9 @@
 % ==========================
 % Choose Motors
 % ==========================
-UBC_MOTOR;                % Motor for Q0
+YAW_MOTOR;                % Motor for Q0
 Q0 = MotorParam;
-UBC_MOTOR;                % Motor for Q1
+PITCH_MOTOR;                % Motor for Q1
 Q1 = MotorParam;
 
 % Motor Unit Conversions
@@ -114,7 +114,7 @@ Mech1n  = [1];                         % Numerator
 Mech1d  = [J1 B1];                     % Denominator
 
 % Gear Dynamics
-GearGain1 = 5;
+GearGain1 = 3;
 
 % Sensor Dynamics
 Encoder1Res = 0.9 * (pi/180) / GearGain1;

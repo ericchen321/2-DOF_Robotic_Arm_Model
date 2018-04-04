@@ -79,7 +79,9 @@ PID1 = [Kp1 Ki1 Kd1];
 
 % Discrete PID values
 Kd0Dig = Kd0/DegPerRad;
-Kp0 = 
+Kp0Dig = Kd1/DegPerRad;
+Ki0Dig = 0;
+PIDDig0 = [Kp0Dig Ki0Dig Kd0Dig];
 
 
 Kd1Dig = Kd1/DegPerRad;

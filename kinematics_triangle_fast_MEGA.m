@@ -1,6 +1,8 @@
 clear all;
 
 % Enter parameters
+GearGain0 = 5;
+GearGain1 = 3;
 DegPerRad = 57.3;
 Side = 0.06;
 SetPointTime = 0.021;
@@ -38,13 +40,17 @@ for i = 1:SetPointSize
     desiredYawArray(i) = DegPerRad * double(sol);
 end
 
+% Scale desired yaw and pitch by gear gains
+desiredYawArray = GearGain0 * desiredYawArray;
+desiredPitchArray = GearGain1 * desiredPitchArray;
+
 % plot desired pitch and yaw
 figure;
 plot(time,desiredPitchArray);
-title('Desired Pitch');
+title('Triangle Fast: Desired Pitch');
 figure;
 plot(time,desiredYawArray);
-title('Desired Yaw');
+title('Triangle Fast: Desired Yaw');
 
 % write the yaw angles to file
 fileID1 = fopen('kin_yaw_triangle_fast.txt', 'w');
