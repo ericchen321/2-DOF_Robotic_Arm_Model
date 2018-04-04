@@ -23,14 +23,6 @@ Sml = 1e-6;             % General purpose small number
 % Specifications %
 %%%%%%%%%%%%%%%%%%
 
-% Number of frames per second
-FramePerSec = 1;
-
-% Sensor
-
-% Distance between tip of laser to the drawing pad
-Height = 0.1;
-
 % Coeff of static friction
 % Amount of torque required to set a body in motion which has a given
 % amount of radial force being applied to it (usually due to gravity)

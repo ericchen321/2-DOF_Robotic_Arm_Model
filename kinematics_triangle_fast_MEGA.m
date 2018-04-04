@@ -1,7 +1,7 @@
 clear all;
 
 % Enter parameters
-GearGain0 = 5;
+GearGain0 = -5;
 GearGain1 = 3;
 DegPerRad = 57.3;
 Side = 0.06;
@@ -57,7 +57,7 @@ fileID1 = fopen('kin_yaw_triangle_fast.txt', 'w');
 i = 1;
 for i = 1:size(desiredYawArray,2)
   if i ~= size(desiredYawArray,2)
-    fprintf(fileID1,'%.2f, ',desiredYawArray(i));
+    fprintf(fileID1,'%.2f\n',desiredYawArray(i));
   else
     fprintf(fileID1,'%.2f',desiredYawArray(i));
   end
@@ -69,7 +69,7 @@ fileID2 = fopen('kin_pitch_triangle_fast.txt', 'w');
 i = 1;
 for i = 1:size(desiredPitchArray,2)
   if i ~= size(desiredPitchArray,2)
-    fprintf(fileID2,'%.2f, ',desiredPitchArray(i));
+    fprintf(fileID2,'%.2f\n',desiredPitchArray(i));
   else
     fprintf(fileID2,'%.2f',desiredPitchArray(i));
   end

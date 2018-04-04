@@ -1,7 +1,7 @@
 % This script sets the trajectory
 
 % Sample Time for Set-Point Time Vector
-SampleTime = 0.08;     % ADJUSTABLE
+SampleTime = 0.04;     %  (s) ADJUSTABLE
 
 % Simulation Execution Time
 TotalTime = 5;          % (s) ADJUSTABLE
@@ -17,13 +17,16 @@ Time       = 0:SampleTime:TotalTime;
 % Desired Trajectory %
 %%%%%%%%%%%%%%%%%%%%%%
 
-Radius = 0.06; % ADJUSTABLE
+fileID0 = fopen('kin_yaw_circle_slow.txt','r');
+formatSpec = '%f';
+sizeYawD = [1 inf];
+YawD = fscanf(fileID0,formatSpec,sizeYawD);
+YawD = RadPerDeg * YawD';
+fclose(fileID0);
 
-Period = 1/FramePerSec;
-
-%Yd = Radius * sin (2*pi*FramePerSec*Time);
-Yd = ones(1, size(Time,2));
-Xd = zeros(1,length(Time));
-Zd = zeros(1,length(Time));
-
-%plot(Xd, Yd);
+fileID1 = fopen('kin_pitch_circle_slow.txt','r');
+formatSpec = '%f';
+sizePitchD = [1 inf];
+PitchD = fscanf(fileID0,formatSpec,sizePitchD);
+PitchD = RadPerDeg * PitchD';
+fclose(fileID1);

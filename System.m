@@ -83,10 +83,10 @@ Mech0d  = [J0 B0];               % Denominator
 JntSat0 =  Big;                  % Q0 has unlimited motion range, as stated in the Datasheet
 
 % Gear Dynamics
-GearGain0 = 5;
+GearGain0 = -5;
 
 % Sensor Dynamics
-Encoder0Res = 0.9 * (pi/180) / GearGain0;
+Encoder0Res = 0.9 * RadPerDeg / GearGain0;
 Q0Initial = 0;
 
 % Static Friction
@@ -117,7 +117,7 @@ Mech1d  = [J1 B1];                     % Denominator
 GearGain1 = 3;
 
 % Sensor Dynamics
-Encoder1Res = 0.9 * (pi/180) / GearGain1;
+Encoder1Res = 0.9 * RadPerDeg / GearGain1;
 Q1Initial = 0;
 
 % Static Friction
