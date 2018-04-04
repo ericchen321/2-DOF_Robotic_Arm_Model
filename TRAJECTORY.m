@@ -21,9 +21,8 @@ Radius = 0.06; % ADJUSTABLE
 
 Period = 1/FramePerSec;
 
-Yd = Radius * sin (2*pi*FramePerSec*Time);
-%Yd = Radius * ones(1,(length(Time)-5));
-%Yd = [0 0 0 0 0 Yd];
+%Yd = Radius * sin (2*pi*FramePerSec*Time);
+Yd = ones(1, size(Time,2));
 Xd = zeros(1,length(Time));
 Zd = zeros(1,length(Time));
 

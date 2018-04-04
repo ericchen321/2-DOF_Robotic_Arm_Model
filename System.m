@@ -75,7 +75,6 @@ Elec0d  = [Q0(11) Q0(10)];          % Denominator, (sL + R), so the numerators a
 TConst0  = Q0(12);                  % The torque constant given by the Datasheet
 BackEMF0 = Q0(13);                  % The speed costant 
                                     
-
 % Mechanical Motor Dynamics
 J0 = 7.8 * 10^(-6);
 B0 = 3.58 * 10^(-7);
@@ -83,18 +82,15 @@ Mech0n  = [1];                 % Numerator
 Mech0d  = [J0 B0];               % Denominator
 JntSat0 =  Big;                  % Q0 has unlimited motion range, as stated in the Datasheet
 
+% Gear Dynamics
+GearGain0 = 5;
+
 % Sensor Dynamics
-Encoder0Res = 0.9 * (pi/180);
+Encoder0Res = 0.9 * (pi/180) / GearGain0;
 Q0Initial = 0;
 
 % Static Friction
 StFric0 = 0.0024;       % Total static frictional torque
-
-% Serial
-SerialSampleTime = 0.04;
-
-
-
 
 
 
@@ -117,9 +113,21 @@ B1 = 3.58 * 10^(-7);
 Mech1n  = [1];                         % Numerator
 Mech1d  = [J1 B1];                     % Denominator
 
+% Gear Dynamics
+GearGain1 = 5;
+
 % Sensor Dynamics
-Encoder1Res = 0.9 * (pi/180);
+Encoder1Res = 0.9 * (pi/180) / GearGain1;
 Q1Initial = 0;
 
 % Static Friction
 StFric1 = 0.0024;
+
+
+
+
+% =============================
+% Sampling
+% =============================
+% Serial
+SerialSampleTime = 0.04;
