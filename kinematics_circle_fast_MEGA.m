@@ -2,7 +2,7 @@ clear all;
 
 % Enter parameters
 GearGain0 = -5;
-GearGain1 = 3;
+GearGain1 = 1;
 DegPerRad = 57.3;
 Radius = 0.06;
 FramePerSec = 16;

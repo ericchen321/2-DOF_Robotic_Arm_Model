@@ -1,14 +1,14 @@
 clear all;
 
 % measurement params
-speedSampleTime = 2000; %specified in us
-suppliedVolt = 2.89;
+speedSampleTime = 2000; %  specified in us
+suppliedVolt = 3.5;
 
 % define constants
 RadPSecPerRPM = pi/30;  % (rad/s) / rpm
 
 % read values
-fileID0 = fopen('pitch_step_motor_data/1_2.89V.txt','r');
+fileID0 = fopen('pitch_step_motor_data/8_3.5V.txt','r');
 formatSpec = '%f';
 sizeA = [1 inf];
 A = fscanf(fileID0,formatSpec,sizeA);
@@ -26,12 +26,12 @@ time = (0:size(speed,1)-1)';
 time = (speedSampleTime/10^6)*time;
 
 % get xf using measured B, J and stuff
-R=2.768;
-L=0.0019;
-J=7.7*10^(-6);
-Kt=0.0135;
-Ke=0.0135;
-B=3.58*10^(-7);
+R=4.1;
+L=0.000204;
+J=3*10^(-6);
+Kt=0.0055;
+Ke=0.0055;
+B=8*10^(-6);
 s = tf('s');
 modelXF = (Kt/(L*J))/(s^2 + (B/J+R/L)*s + (R*B+Kt*Ke)/(L*J));
 

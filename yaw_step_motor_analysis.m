@@ -8,7 +8,7 @@ suppliedVolt = 2.89;
 RadPSecPerRPM = pi/30;  % (rad/s) / rpm
 
 % read values
-fileID0 = fopen('yaw_step_motor_data/1_2.89V.txt','r');
+fileID0 = fopen('yaw_step_motor_data/2_6V.txt','r');
 formatSpec = '%f';
 sizeA = [1 inf];
 A = fscanf(fileID0,formatSpec,sizeA);
@@ -22,6 +22,7 @@ while (A(i) == 0)
 end
 i = i-1;
 speed = RadPSecPerRPM * A(i:end);
+%speed = movmean(speed, 8);
 time = (0:size(speed,1)-1)';
 time = (speedSampleTime/10^6)*time;
 
@@ -38,9 +39,9 @@ modelXF = (Kt/(L*J))/(s^2 + (B/J+R/L)*s + (R*B+Kt*Ke)/(L*J));
 % plot to compare model with actual
 plot(time,speed);
 hold on;
-step(suppliedVolt * modelXF);
+%step(suppliedVolt * modelXF);
 title('Yaw Motor Step Response');
 xlabel('Time (sec)');
 ylabel('Speed (rad/sec)');
-legend('Measured', 'Simulated');
+%legend('Measured', 'Simulated');
 hold off;

@@ -2,13 +2,13 @@ clear all;
 
 % Enter parameters
 GearGain0 = -5;
-GearGain1 = 3;
+GearGain1 = 1;
 DegPerRad = 57.3;
 Side = 0.06;
 SetPointTime = 0.021;
 TotalTime = 5;
-D = 0.1;
-R = 0.05;
+D = 0.3;
+R = 0.113;
 XPerFrame = [0 0.06 0.03 0];
 YPerFrame = [0 0 0.052 0];
 SetPointSizePerFrame = size(XPerFrame,2);

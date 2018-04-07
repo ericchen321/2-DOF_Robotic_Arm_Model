@@ -108,20 +108,20 @@ TConst1  = Q1(12);
 BackEMF1 = Q1(13);
 
 % Mechanical Motor Dynamics
-J1 = 7.8 * 10^(-6);
-B1 = 3.58 * 10^(-7);
+J1 = 3 * 10^(-6);
+B1 = 8 * 10^(-6);
 Mech1n  = [1];                         % Numerator
 Mech1d  = [J1 B1];                     % Denominator
 
 % Gear Dynamics
-GearGain1 = 3;
+GearGain1 = 1;
 
 % Sensor Dynamics
 Encoder1Res = 0.9 * RadPerDeg / GearGain1;
 Q1Initial = 0;
 
 % Static Friction
-StFric1 = 0.0024;
+StFric1 = 0;
 
 
 

@@ -12,10 +12,10 @@ MotorParam = ...
  929                % StallTorque   (g*cm) REQUIRED
  1.5                % StallCurr     (A) REQUIRED
  1                  % MaxEff        (decimal)
- 1.25               % TermR         (Ohms) REQUIRED
+ 4.1                % TermR         (Ohms) REQUIRED
  0.000204           % TermL         (H) REQUIRED
- 0.0135             % TorqueConst   (Nm/A) REQUIRED
- 0.0135             % SpdConst      (V/(rad/sec)) REQUIRED
+ 0.0055             % TorqueConst   (Nm/A) REQUIRED
+ 0.0055             % SpdConst      (V/(rad/sec)) REQUIRED
  0                  % RotJ          (kg*m^2)
  0                  % Weight        (g)
 

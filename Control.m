@@ -41,9 +41,9 @@ PID1z = [SysOLXF1p(1) SysOLXF1p(3)]; % Defines which two open-loop poles to canc
 PID1p = [0]; % PID adds a zero to the open loop xfer fctn
 PIDXF1 = zpk(PID1z, PID1p, UnityGain);  %PID0's transfer function with Kd undetermined
 OLXF1 = minreal(PIDXF1 * SysOLXF1, 1e-3);
-%figure;
-%rlocus(OLXF1);
-%title('RLocus Q1');
+figure;
+rlocus(OLXF1);
+title('RLocus Q1');
 
 
 % Closed loop transfer functions
@@ -51,8 +51,8 @@ Kd0 = 1;
 Kp0 = 8.518*Kd0;
 Ki0 = 0;
 
-Kd1 = 78;
-Kp1 = 8.518*Kd1;
+Kd1 = 570;
+Kp1 = 5.127*Kd1;
 Ki1 = 0;
 CLXF1 = (Kd1 * PIDXF1 * MotorXF1)/(1 + Kd1 * PIDXF1 * MotorXF1);
 
@@ -80,11 +80,11 @@ PID1 = [Kp1 Ki1 Kd1];
 % Discrete PID values
 Kd0Dig = Kd0/DegPerRad;
 Kp0Dig = Kd1/DegPerRad;
-Ki0Dig = 0;
+Ki0Dig = Ki0/DegPerRad;
 PIDDig0 = [Kp0Dig Ki0Dig Kd0Dig];
 
 
 Kd1Dig = Kd1/DegPerRad;
 Kp1Dig = Kp1/DegPerRad;
-Ki1Dig = 0;
+Ki1Dig = Ki1/DegPerRad;
 PIDDig1 = [Kp1Dig Ki1Dig Kd1Dig];

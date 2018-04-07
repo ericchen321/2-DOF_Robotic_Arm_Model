@@ -30,3 +30,5 @@ sizePitchD = [1 inf];
 PitchD = fscanf(fileID0,formatSpec,sizePitchD);
 PitchD = RadPerDeg * PitchD';
 fclose(fileID1);
+
+%PitchD = 90*ones(size(Time,2),1);

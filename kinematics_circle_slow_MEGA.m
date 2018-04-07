@@ -1,15 +1,15 @@
 clear all;
 
 % Enter parameters
-GearGain0 = -5;
+GearGain0 = 1;
 GearGain1 = 3;
 DegPerRad = 57.3;
 Radius = 0.06;
 FramePerSec = 2;
 SetPointTime = 0.04;
 TotalTime = 5;
-D = 0.1;
-R = 0.05;
+D = 0.3;
+R = 0.113;
 
 % Create time vector
 time = 0:SetPointTime:TotalTime;
