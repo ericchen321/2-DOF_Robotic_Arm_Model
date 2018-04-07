@@ -51,7 +51,7 @@ Kd0 = 1;
 Kp0 = 8.518*Kd0;
 Ki0 = 0;
 
-Kd1 = 570;
+Kd1 = 50;
 Kp1 = 5.127*Kd1;
 Ki1 = 0;
 CLXF1 = (Kd1 * PIDXF1 * MotorXF1)/(1 + Kd1 * PIDXF1 * MotorXF1);
